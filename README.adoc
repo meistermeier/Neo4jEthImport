@@ -1,0 +1,24 @@
+=== Exclude monitoring and faucet node
+
+----
+MATCH (n:Identity)-[r]->(m:Identity) where NOT n:Faucet and NOT m.address = '0x9850711951a84ef8a2a31a7868d0dca34b0661ca'
+RETURN n, r, m
+----
+
+=== Interesting
+
+.probably WebApplication or similar
+----
+0xd748bf41264b906093460923169643f45bdbc32e
+----
+
+=== Todo
+
+* Add instructions how to use this at all :)
+* Import whole transaction data
+** maybe just everything available via Web3j-API
+* Add properties to node
+** smart contract
+* Add properties to relationship
+** gas amount
+** payload(?)
